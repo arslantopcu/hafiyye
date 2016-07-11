@@ -1,0 +1,53 @@
+{{set . "title" "Home"}}
+{{template "header.html" .}}
+
+<div id="hld">
+    <div class="wrapper">
+
+
+
+        <div class="block small center login">
+
+    <div class="block_head">
+            <div class="bheadl"></div>
+            <div class="bheadr"></div>
+            <h2>Login</h2>
+    </div>
+
+    <div class="block_content">
+          {{if .flash.error}}
+            <div class="message errormsg" style="display: block;">
+                <p>{{.flash.error}}</p><span class="close" title="Dismiss"></span>
+            </div>
+            {{end}}
+            <form action="{{url "App.LoginCkeck"}}" method="post">
+                    <p>
+                        <label>Username:</label> <br />
+                        <input type="text" id="username" name="username" class="text"  value="{{.flash.username}}" />
+                    </p>
+
+                    <p>
+                        <label>Password:</label> <br />
+                        <input type="password" name="password" class="text" value="" />
+                    </p>
+
+                    <p>
+                        <input type="submit" class="submit" value="Login" /> &nbsp;
+                    </p>
+            </form>
+
+    </div>		<!-- .block_content ends -->
+
+    <div class="bendl"></div>
+    <div class="bendr"></div>
+
+</div>
+<script type="text/javascript">
+    jQuery(function(){
+        jQuery('#username').focus();
+    })
+</script>
+    </div>
+</div>
+
+{{template "footer.html" .}}
