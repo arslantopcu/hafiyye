@@ -6,6 +6,9 @@
 
 ### Paketler:
 
+    Revel Framework
+    MongoDB
+
     go get github.com/revel/revel
     go get gopkg.in/mgo.v2
     go get github.com/PuerkitoBio/goquery
