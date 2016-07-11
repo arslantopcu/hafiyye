@@ -1,12 +1,21 @@
-# Welcome to Revel
+# Hafiyye
 
 ## Getting Started
 
-A high-productivity web framework for the [Go language](http://www.golang.org/).
+İnternette sizin belirttiğiniz keywordler ile periyodik arama yaparak size ilgili sonuçları listeler [Go language](http://www.golang.org/).
+
+### Paketler:
+
+    go get github.com/revel/revel
+    go get gopkg.in/mgo.v2
+    go get github.com/PuerkitoBio/goquery
+    go get github.com/janekolszak/revmgo
+
+
 
 ### Start the web server:
 
-    revel run myapp
+    revel run hafiyye
 
    Run with <tt>--help</tt> for options.
 
