@@ -14,7 +14,7 @@ type Document struct {
 }
 
 type Banlist struct {
-	Id 	bson.ObjectId
+	Id 	bson.ObjectId	`bson:"_id,omitempty"`
 	Url 	string
 }
 

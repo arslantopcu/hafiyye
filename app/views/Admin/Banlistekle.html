@@ -12,7 +12,7 @@
 
                                 <ul id="nav">
                     <li><a href="/admin">Kampanyalar</a></li>
-                                        <li><a href="{{url "Admin.Linkler"}}">Bulunan sayfalar</a></li>
+                                         <li><a href="{{url "Admin.Linkler"}}">Bulunan sayfalar</a></li>
                     <li><a href="{{url "Admin.Banlist"}}">Banlı Sayfalar</a></li>
                 </ul>
 
@@ -28,7 +28,7 @@
         <div class="bheadl"></div>
         <div class="bheadr"></div>
 
-        <h2>Link ekle</h2>
+        <h2>Banlı Link ekle</h2>
         <ul>
             <li class="nobg"><a href="/admin">Geri</a></li>
         </ul>
@@ -40,15 +40,12 @@
           <strong>{{.flash.error}}</strong>
         </p>
       {{end}}
-        <form method="post" action={{url "Admin.SaveKeyword"}}>
+        <form method="post" action={{url "Admin.Banlistekle"}}>
             <input type="hidden" name="id" value="">
+
             <p>
-                    <label>Adı:</label><br>
-                    <input type="text" name="name" class="text small" value="">
-            </p>
-            <p>
-                    <label>Keyword:</label><br>
-                    <input type="text" name="keyword" class="text small" value="">
+                    <label>Url:</label><br>
+                    <input type="text" name="url" class="text small" value="">
             </p>
             <hr>
             <p>

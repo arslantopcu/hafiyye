@@ -40,7 +40,7 @@
     <div class="block_content">
 
 
-            <table cellspacing="0" cellpadding="0" width="100%" class="sortable">
+             <table cellspacing="0" cellpadding="0" width="100%" class="sortable">
 
                     <thead>
                             <tr>
@@ -53,10 +53,10 @@
                     <tbody>
                             {{range .result}}
                             <tr>
-                                <td>{{.Name}}</td>
-                                <td><a href="https://www.google.com/search?q={{.Keyword}}" target="_blank">{{.Keyword}}</a></td>
+                                <td>{{.Keyword}}</td>
+                                <td><a href="{{.Url}}" target="_blank">{{.Url}}</a></td>
                                 <td class="delete">
-                                    <a href="/admin/delete/{{.Id.Hex}}"
+                                    <a href="/admin/linkler/delete/{{.Id.Hex}}"
                                        onclick="return confirm('Keyword silinecek onaylıyormusunuz?')">
                                         Keyword Sil
                                     </a>
@@ -70,10 +70,10 @@
             <div class="pagination right">
 
                 {{if gt .p 1 }}
-                <a href="{{url "Admin.Index" .prev}}" class="prev">« Previous</a>
+                <a href="{{url "Admin.Linkler" .prev}}" class="prev">« Previous</a>
                 {{end}}
 
-                <a href="{{url "Admin.Index" .next}}" class="next">Next »</a>
+                <a href="{{url "Admin.Linkler" .next}}" class="next">Next »</a>
             </div>
 
     </div>

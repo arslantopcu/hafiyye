@@ -10,8 +10,17 @@ GET     /logout                                  App.Logout
 POST    /login                                  App.LoginCkeck
 GET     /admin                               Admin.Index
 GET     /admin/insert                           Admin.InsertDocument
+
 GET     /admin/delete/:id                      Admin.DeleteDocument
 POST     /admin/save                           Admin.SaveKeyword
+
+GET     /admin/linkler                               Admin.Linkler
+GET     /admin/linkler/delete/:id                               Admin.LinklerDelete
+
+GET     /admin/banlist                               Admin.Banlist
+GET     /admin/banlist/ekle                               Admin.Banlistekle
+GET     /admin/banlist/delete/:id                               Admin.BanlistDelete
+POST     /admin/banlist/ekle                               Admin.Banlistinsert
 
 # Ignore favicon requests
 GET     /favicon.ico                            404

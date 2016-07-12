@@ -27,12 +27,12 @@
         <div class="bheadl"></div>
         <div class="bheadr"></div>
 
-        <h2>Anahtar kelimeler</h2>
+        <h2>Banlı url</h2>
         <form id="search-form" method="GET" action="/admin/index">
                 <input type="text" value="Search" class="text" name="search" id="search">
         </form>
         <ul>
-            <li><a href={{url "Admin.InsertDocument"}}>Yeni link ekle</a></li>
+            <li><a href={{url "Admin.Banlistekle"}}>Yeni link ekle</a></li>
             <li></li>
         </ul>
     </div>
@@ -44,8 +44,7 @@
 
                     <thead>
                             <tr>
-                                <th>Adı</th>
-                                <th>Keyword</th>
+                                <th>Url</th>
                                 <th></th>
                             </tr>
                     </thead>
@@ -53,12 +52,11 @@
                     <tbody>
                             {{range .result}}
                             <tr>
-                                <td>{{.Name}}</td>
-                                <td><a href="https://www.google.com/search?q={{.Keyword}}" target="_blank">{{.Keyword}}</a></td>
+                                <td><a href="{{.Url}}" target="_blank">{{.Url}}</a></td>
                                 <td class="delete">
-                                    <a href="/admin/delete/{{.Id.Hex}}"
+                                    <a href="/admin/banlist/delete/{{.Id.Hex}}"
                                        onclick="return confirm('Keyword silinecek onaylıyormusunuz?')">
-                                        Keyword Sil
+                                        Ban Sil
                                     </a>
                                 </td>
                             </tr>
@@ -70,10 +68,10 @@
             <div class="pagination right">
 
                 {{if gt .p 1 }}
-                <a href="{{url "Admin.Index" .prev}}" class="prev">« Previous</a>
+                <a href="{{url "Admin.Banlist" .prev}}" class="prev">« Previous</a>
                 {{end}}
 
-                <a href="{{url "Admin.Index" .next}}" class="next">Next »</a>
+                <a href="{{url "Admin.Banlist" .next}}" class="next">Next »</a>
             </div>
 
     </div>
