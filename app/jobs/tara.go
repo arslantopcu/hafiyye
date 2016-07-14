@@ -43,8 +43,6 @@ func Crawler(link, keyword string) {
 
 	doc, _ := goquery.NewDocument(link)
 
-	banlist :=[] models.Banlist{}
-	db.C("Banlist").Find(nil).All(&banlist)
 
 	doc.Find(".r").Each(func(i int, s *goquery.Selection) {
 		band , _ := s.Find("a").Attr("href")
@@ -56,26 +54,34 @@ func Crawler(link, keyword string) {
 
 			InsertDb(href, keyword)
 
-
 		}
 	})
 
 }
 
+
+// Mongo db fulltext search
 func InsertDb(url, keyword string){
 
 	data := models.Document{}
-	db.C("Document").Find(bson.M{"Url":url}).One(&data)
+	db.C("Document").Find(bson.M{"url": url}).One(&data)
+
+	ban :=[]models.Banlist{}
+	db.C("Banlist").Find(nil).All(&ban)
+
+	for _, item := range ban{
+
+		if strings.Contains(url, item.Url)  {
+			return
+		}
+
+	}
 
 	if len(data.Url) < 2 {
-
 		doc := models.Document{}
 		doc.Keyword = keyword
 		doc.Url = url
-
-		fmt.Println(url)
-
-		//db.C("Document").Insert(&doc)
+		db.C("Document").Insert(&doc)
 
 	}
 }

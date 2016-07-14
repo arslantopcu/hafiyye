@@ -164,7 +164,7 @@ func (c Admin) SaveKeyword(name, keyword string) revel.Result {
 	key.Timestamp = time.Now()
 
 	data := models.Keywords{}
-	db.C("Keywords").Find(bson.M{"Name": keyword}).One(&data)
+	db.C("Keywords").Find(bson.M{"keyword": keyword}).One(&data)
 
 	if len(data.Name) > 2 {
 		c.Flash.Error("Keyword adresi kayitli")
