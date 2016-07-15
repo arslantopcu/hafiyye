@@ -48,7 +48,6 @@ func (c Admin) Linkler(p int) revel.Result {
 	next := p+1
 	prev := p-1
 	total := math.Ceil(float64(t)/float64(sizeLimit))
-
 	return c.Render(username, result, total, p, next, prev)
 }
 
@@ -140,7 +139,6 @@ func (c Admin) Index(p int) revel.Result {
 	next := p+1
 	prev := p-1
 	total := math.Ceil(float64(t)/float64(sizeLimit))
-
 
 	return c.Render(username, result, total, p, next, prev)
 }
