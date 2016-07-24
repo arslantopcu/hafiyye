@@ -17,7 +17,7 @@ type Admin struct {
 
 func (c Admin) checkUser() revel.Result {
 
-	if c.Session["username"] != "aslan" {
+	if c.Session["username"] != "admin" {
 		c.Flash.Error("Please log in first")
 		return c.Redirect(routes.App.Login())
 	}

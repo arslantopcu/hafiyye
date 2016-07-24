@@ -30,9 +30,9 @@ func (c App) Logout() revel.Result {
 
 func (c App) LoginCkeck(username, password string) revel.Result {
 
-	if username == "aslan" && password == "2525" {
+	if username == "admin" && password == "12345" {
 
-		c.Session["username"]="aslan"
+		c.Session["username"]="admin"
 
 		return  c.Redirect(Admin.Index)
 	}else{

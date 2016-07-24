@@ -22,9 +22,10 @@
 
    Run with <tt>--help</tt> for options.
 
-### Go to http://localhost:9000/ and you'll see:
+### Go to http://localhost:8989/login
 
-"It works"
+Login page user : admin pass: 12345
+
 
 ### Description of Contents
 
