@@ -48,18 +48,7 @@ The default directory structure of a generated Revel application:
         images          Image files
 
 
+![Screenshot](public/demo/3.png)
+![Screenshot](public/demo/4.png)
 ![Screenshot](public/demo/1.png)
-
-### Follow the guidelines to start developing your application:
-
-* The README file created within your application.
-* The [Getting Started with Revel](http://revel.github.io/tutorial/index.html).
-* The [Revel guides](http://revel.github.io/manual/index.html).
-* The [Revel sample apps](http://revel.github.io/samples/index.html).
-* The [API documentation](https://godoc.org/github.com/revel/revel).
-
-
-## Contributing
-We encourage you to contribute to Revel! Please check out the [Contributing to Revel
-guide](https://github.com/revel/revel/blob/master/CONTRIBUTING.md) for guidelines about how
-to proceed. [Join us](https://groups.google.com/forum/#!forum/revel-framework)!
+![Screenshot](public/demo/2.png)
