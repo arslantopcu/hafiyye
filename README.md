@@ -47,31 +47,8 @@ The default directory structure of a generated Revel application:
         js              Javascript files
         images          Image files
 
-app
 
-    The app directory contains the source code and templates for your application.
-
-conf
-
-    The conf directory contains the application’s configuration files. There are two main configuration files:
-
-    * app.conf, the main configuration file for the application, which contains standard configuration parameters
-    * routes, the routes definition file.
-
-
-messages
-
-    The messages directory contains all localized message files.
-
-public
-
-    Resources stored in the public directory are static assets that are served directly by the Web server. Typically it is split into three standard sub-directories for images, CSS stylesheets and JavaScript files.
-
-    The names of these directories may be anything; the developer need only update the routes.
-
-test
-
-    Tests are kept in the tests directory. Revel provides a testing framework that makes it easy to write and run functional tests against your application.
+![Screenshot](public/demo/1.png)
 
 ### Follow the guidelines to start developing your application:
 
@@ -80,6 +57,7 @@ test
 * The [Revel guides](http://revel.github.io/manual/index.html).
 * The [Revel sample apps](http://revel.github.io/samples/index.html).
 * The [API documentation](https://godoc.org/github.com/revel/revel).
+
 
 ## Contributing
 We encourage you to contribute to Revel! Please check out the [Contributing to Revel

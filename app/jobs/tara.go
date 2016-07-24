@@ -32,7 +32,7 @@ type pagedSearch struct {
 }
 
 var (
-	url_search = "https://www.google.%s/search?q=%s&num=%d&start=%d&hl=%s"
+	url_search = "https://www.google.%s/search?q=%s&num=%d&start=%d&hl=%s&tbs=lr:lang_1tr&lr=lang_tr"
 	nb_results_per_page = 10
 	searchLock = make(chan bool)
 )
@@ -54,16 +54,15 @@ func FetchUrl(){
 	result := [] models.Keywords{}
 	db.C("Keywords").Find(nil).All(&result)
 
-
-	/*
 	for _ , r := range  result {
+
 		resultChan := Search(r.Keyword, "com", "tr")
-		//InsertDb(res.Link, r.Keyword)
 
 		for elem := range resultChan {
-			fmt.Println(elem)
+			fmt.Println(elem.Link)
+			InsertDb(elem.Link, r.Keyword)
 		}
-	}*/
+	}
 }
 
 
@@ -71,7 +70,7 @@ func Test() {
 	resultChan := Search("new york", "com.tr","tr")
 
 	for elem := range resultChan {
-		fmt.Println(elem)
+		fmt.Println(elem.Link)
 	}
 
 }
@@ -164,7 +163,7 @@ func doPagedSearch(paged_search *pagedSearch) {
 
 func releaseSearchLock(t chan bool) {
 	//only one search every n seconds
-	time.Sleep(time.Second * 2)
+	time.Sleep(time.Second * 10)
 	t <- false
 }
 

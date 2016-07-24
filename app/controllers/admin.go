@@ -43,6 +43,7 @@ func (c Admin) Linkler(p int) revel.Result {
 		fmt.Println("Sayfa yok")
 	}
 
+
 	username := c.Session["username"]
 
 	next := p+1
